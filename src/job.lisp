@@ -1,3 +1,6 @@
+;;;; Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+;;;; SPDX-License-Identifier: BSD-3-Clause
+
 ;;;; job.lisp - Mining Job Management
 ;;;;
 ;;;; Handles mining jobs received from pools, including coinbase reconstruction,

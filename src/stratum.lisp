@@ -1,3 +1,6 @@
+;;;; Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+;;;; SPDX-License-Identifier: BSD-3-Clause
+
 ;;;; stratum.lisp - Stratum Protocol Client Implementation
 ;;;;
 ;;;; Implements the Stratum mining protocol v1 for connecting to mining pools.

@@ -3,7 +3,7 @@
 
 (defsystem "cl-mining-protocol"
   :version "1.0.0"
-  :author "CLPIC Contributors"
+  :author "Parkian Company LLC"
   :license "MIT"
   :description "Stratum pool mining protocol for Bitcoin-compatible blockchains"
   :long-description "A standalone implementation of the Stratum mining protocol
