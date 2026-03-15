@@ -1,32 +1,37 @@
 ;; Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
-;; SPDX-License-Identifier: BSD-3-Clause
+;; SPDX-License-Identifier: Apache-2.0
 
-;;;; cl-mining-protocol.asd - Stratum Pool Mining Protocol
-;;;; Pure Common Lisp implementation of the Stratum mining protocol
-
-(asdf:defsystem #:"cl-mining-protocol"
-  :version "0.1.0"
+(asdf:defsystem #:cl-mining-protocol
+  :description "Stratum pool mining protocol for Bitcoin-compatible blockchains"
   :author "Park Ian Co"
   :license "Apache-2.0"
-  :description "Stratum pool mining protocol for Bitcoin-compatible blockchains"
-  :long-description "A standalone implementation of the Stratum mining protocol
-supporting pool mining, job management, share submission, and variable difficulty.
-Includes an inlined SHA256d implementation for block header hashing."
-  :depends-on ()
+  :version "0.1.0"
   :serial t
-  :components ((:file "package")
-               (:module "src"
-                :components ((:file "package")
-                             (:file "conditions" :depends-on ("package"))
-                             (:file "types" :depends-on ("package"))
-                             (:file "cl-mining-protocol" :depends-on ("package" "conditions" "types")))))))
+  :components
+  ((:module "src"
+            :serial t
+            :components
+            ((:file "package")
+             (:file "conditions")
+             (:file "types")
+             (:file "util")
+             (:file "job")
+             (:file "stratum")
+             (:file "cl-mining-protocol"))))
+  :in-order-to ((asdf:test-op (test-op #:cl-mining-protocol/test))))
 
 (asdf:defsystem #:cl-mining-protocol/test
   :description "Tests for cl-mining-protocol"
+  :author "Park Ian Co"
+  :license "Apache-2.0"
   :depends-on (#:cl-mining-protocol)
   :serial t
-  :components ((:module "test"
-                :components ((:file "test-mining-protocol"))))
+  :components
+  ((:module "test"
+    :serial t
+    :components
+    ((:file "package")
+     (:file "test"))))
   :perform (asdf:test-op (o c)
              (let ((result (uiop:symbol-call :cl-mining-protocol.test :run-tests)))
                (unless result
