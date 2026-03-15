@@ -7,7 +7,11 @@
   (:use #:cl)
   (:nicknames #:mining-protocol #:stratum)
   (:export
-   #:with-mining-protocol-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-mining-protocol-timing
    #:mining-protocol-batch-process
    #:mining-protocol-health-check;; SHA256d (inlined for block hashing)
    #:sha256
@@ -86,6 +90,10 @@
 (defpackage #:cl-mining-protocol.test
   (:use #:cl #:cl-mining-protocol)
   (:export
-   #:with-mining-protocol-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-mining-protocol-timing
    #:mining-protocol-batch-process
    #:mining-protocol-health-check#:run-tests))
