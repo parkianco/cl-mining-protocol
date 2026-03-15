@@ -16,8 +16,10 @@ Includes an inlined SHA256d implementation for block header hashing."
   :serial t
   :components ((:file "package")
                (:module "src"
-                :serial t
-                :components ((:file "util")))))
+                :components ((:file "package")
+                             (:file "conditions" :depends-on ("package"))
+                             (:file "types" :depends-on ("package"))
+                             (:file "cl-mining-protocol" :depends-on ("package" "conditions" "types")))))))
 
 (asdf:defsystem #:cl-mining-protocol/test
   :description "Tests for cl-mining-protocol"
