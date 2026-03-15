@@ -6,8 +6,8 @@
 
 (asdf:defsystem #:"cl-mining-protocol"
   :version "0.1.0"
-  :author "Parkian Company LLC"
-  :license "MIT"
+  :author "Park Ian Co"
+  :license "Apache-2.0"
   :description "Stratum pool mining protocol for Bitcoin-compatible blockchains"
   :long-description "A standalone implementation of the Stratum mining protocol
 supporting pool mining, job management, share submission, and variable difficulty.
